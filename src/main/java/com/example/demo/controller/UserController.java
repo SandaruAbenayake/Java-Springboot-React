@@ -9,14 +9,14 @@ import java.util.List;
 
 @RestController //මේ class එක API එකක්
 @CrossOrigin
-@RequestMapping(value = "api/v1/")
+@RequestMapping(value = "api/v1/") //Request base url
 public class UserController {
 
     @Autowired //Object එක create කරලා inject කරන්න
     private UserService userService;
 
-    @GetMapping("/getuser") //GET request handle කරන්න
-    public List<userDTO> getUser(){
+    @GetMapping("/getusers") //GET request handle කරන්න
+    public List<userDTO> getUsers(){
         return userService.getAllUser();
     }
 
