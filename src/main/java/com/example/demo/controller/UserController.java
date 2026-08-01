@@ -7,20 +7,20 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@RestController //මේ class එක API එකක්
 @CrossOrigin
-@RequestMapping(value = "api/v1/")
+@RequestMapping(value = "api/v1/") //Request base url
 public class UserController {
 
-    @Autowired
+    @Autowired //Object එක create කරලා inject කරන්න
     private UserService userService;
 
-    @GetMapping("/getuser")
-    public List<userDTO> getUser(){
+    @GetMapping("/getusers") //GET request handle කරන්න
+    public List<userDTO> getUsers(){
         return userService.getAllUser();
     }
 
-    @PostMapping("/adduser")
+    @PostMapping("/adduser") //POST request handle කරන්න
     public userDTO saveUser(@RequestBody userDTO userDTO){
         return userService.saveUser(userDTO);
     }

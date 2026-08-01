@@ -11,8 +11,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
-@Service
-@Transactional
+@Service //Business Logic තියෙන class එක
+@Transactional //Database Transaction handle කරන්න
 public class UserService {
     @Autowired
     private UserRepo userRepo ;
