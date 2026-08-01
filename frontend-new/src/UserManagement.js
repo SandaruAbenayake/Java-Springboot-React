@@ -34,8 +34,8 @@ const UserManagement = () => {
 
     return (
         <div className="user-container">
-            <h1>User Management</h1>
-            <div className="form">
+            <h2>User Management</h2>
+            <form onSubmit={(e) => e.preventDefault()}>
                 <input
                     type="text"
                     placeholder="ID"
@@ -50,8 +50,8 @@ const UserManagement = () => {
                 />
                 <button onClick={addUser}>Add User</button>
                 <button onClick={updateUser}>Update User</button>
-            </div>
-            <ul>
+            </form>
+            <ul className="user-list">
                 {users.map((u) => (
                     <li key={u.id} className="user-item">
                         {u.id} - {u.name}
